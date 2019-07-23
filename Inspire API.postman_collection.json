@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "2a041700-fcef-4f56-a3ab-146866a79901",
+		"name": "Inspire API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "email",
+								"value": "test@test.com",
+								"type": "text"
+							},
+							{
+								"key": "password",
+								"value": "123456",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/auth/login",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Login endpoint"
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Test User",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "test@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{server}}/api/auth/register",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inspire",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{server}}/api/inspire",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"inspire"
+					]
+				},
+				"description": "Runs `php artisan inspire` command in the controller."
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{server}}/api/user",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"api",
+						"user"
+					]
+				},
+				"description": "Returns current user."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImM4YmRjM2I1OWE5ZjI5NWFjNGYxYzBjZWU2NzhiYjMwMjZhZmVkMmQwM2NkNWZkNGVlNDdkZWUyMmU1ZTk5NTg3NWJiOTgwYzgxOGY3NjRjIn0.eyJhdWQiOiIxIiwianRpIjoiYzhiZGMzYjU5YTlmMjk1YWM0ZjFjMGNlZTY3OGJiMzAyNmFmZWQyZDAzY2Q1ZmQ0ZWU0N2RlZTIyZTVlOTk1ODc1YmI5ODBjODE4Zjc2NGMiLCJpYXQiOjE1NjM5MDE5ODEsIm5iZiI6MTU2MzkwMTk4MSwiZXhwIjoxNTk1NTI0MzgxLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.oxeLcuGMmi2pw6S-oAaIEQ4Skfp1MHLA1QR2_3ILV9BEDsQWgGkkami_7OPtIUpSY3_RydJ6N5b8Yf3d2GDDSdixG3bUeAS_u1aj4Z8qEfpwhnT2PwOgthCDeF3KBjN4D4KN5fm3PqXX8V4mAeQNBtQyUZXjguFVW59Plp-t4OFmFkv0qhTf46CTd3vxa_jKw1h9K6CDooklv4qmy8T1xGhuw30p4Tun9QEMUWMoU4EVdiSznYhgw-mGVUVxp0jcDATgeod5G6h5qKfLGQaU3JhdshKl2CrINpHfK2wWc-Vx76GOluXosDyEiZ1axySbs5cmVGWzIGk7ZbMN0qrbSJiDW5R-4Qk0v_5Y-X4VmQ0yFZXzxn9XR3ez6DrnPp0yWhNulvBB8trA8xSo7e7nArMoTEaY5vqwhSQJEwKei6XPsmrCCz1H0UT6x72NiQDTiwtIrf_pxDC0YHEwyM9apCdjugZxSzqoty-dQONmrETvT4vSai_zCbtLvDk62sYSDLfgW-QDtWDgJDJXOw8P5_8-D13iGY3ecYuBKGolpCtYIpv-r5ncxkJezQn9Xtc3AgZmqPCnDOtPTarfgLBOFZDKyFcCde1pPgLSxq906XK_V5aeF-2Jm-Se-kCgGBGSxq2632lkmtQAJMgq5JgVEZB3g_MwjmoVva-NHc408RA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "7e032ae9-edd6-4a44-8c56-2b96fd57a8d9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1d9ef6aa-6108-489c-942d-064281d8173c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
