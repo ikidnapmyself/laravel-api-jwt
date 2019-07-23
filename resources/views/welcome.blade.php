@@ -85,6 +85,10 @@
                 <div class="title m-b-md">
                     {{ config('app.name') }}
                 </div>
+                <div class="links">
+                    <a href="https://github.com/ikidnapmyself/laravel-api-jwt">GitHub</a>
+                    <a href="https://documenter.getpostman.com/view/4821859/SVSPp7ix?version=latest">Docs</a>
+                </div>
             </div>
         </div>
     </body>
