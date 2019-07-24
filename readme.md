@@ -32,6 +32,11 @@ Generate secret tokens:
 php artisan passport:install
 ```
 
+Create a new client:
+```
+php artisan passport:client --personal
+```
+
 Run:
 ```
 php artisan serve
