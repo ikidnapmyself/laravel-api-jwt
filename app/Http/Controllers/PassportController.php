@@ -14,6 +14,7 @@ class PassportController extends Controller
      * Handles registration request.
      *
      * @param RegisterRequest $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function register(RegisterRequest $request)
@@ -23,7 +24,7 @@ class PassportController extends Controller
         $user = User::create([
             'name'     => Arr::get($fields, 'name'),
             'email'    => Arr::get($fields, 'email'),
-            'password' => bcrypt(Arr::get($fields, 'password'))
+            'password' => bcrypt(Arr::get($fields, 'password')),
         ]);
 
         $token = $user->createToken('laravel-inspire-api')->accessToken;
@@ -32,9 +33,10 @@ class PassportController extends Controller
     }
 
     /**
-     * Handles Login Request
+     * Handles Login Request.
      *
      * @param LoginRequest $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
     public function login(LoginRequest $request)
@@ -43,12 +45,12 @@ class PassportController extends Controller
 
         $credentials = [
             'email'    => Arr::get($fields, 'email'),
-            'password' => Arr::get($fields, 'password')
+            'password' => Arr::get($fields, 'password'),
         ];
 
-        if (auth()->attempt($credentials))
-        {
+        if (auth()->attempt($credentials)) {
             $token = auth()->user()->createToken('laravel-inspire-api')->accessToken;
+
             return response()->json(['token' => $token], 200);
         } else {
             return response()->json(['error' => 'UnAuthorised'], 401);
@@ -56,7 +58,7 @@ class PassportController extends Controller
     }
 
     /**
-     * Returns Authenticated User Details
+     * Returns Authenticated User Details.
      *
      * @return \Illuminate\Http\JsonResponse
      */
