@@ -1,3 +1,5 @@
+[![StyleCI](https://github.styleci.io/repos/198367747/shield?branch=master)](https://github.styleci.io/repos/198367747)
+
 ## About Application
 This is a sample API that returns `php artisan inspire` command line result.
 
